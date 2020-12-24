@@ -41,14 +41,28 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun setAllWater(number: Double){
+    private fun setAllWater(number: Double) {
         val html =
             Html.fromHtml("实际使用<font color='#32CD32'><normal>" + number + "</normal></font>吨")
         tv_main_dun_all.text = html
     }
 
     private fun countData() {
-        if (mArray.isNullOrEmpty()) return
+
+        val zallWater = et_main_z_water.text.toString()
+        if (TextUtils.isEmpty(zallWater)) {
+            Toast.makeText(this, "请输入总顿数", Toast.LENGTH_SHORT).show();
+            return
+        }
+        val allMoney = et_main_z_money.text.toString()
+        if (TextUtils.isEmpty(allMoney)) {
+            Toast.makeText(this, "请输入总金额", Toast.LENGTH_SHORT).show();
+        }
+
+        if (mArray.isNullOrEmpty()) {
+            Toast.makeText(this, "请点击输入楼户数", Toast.LENGTH_SHORT).show();
+            return
+        }
         //计算平均价格 水场每吨价格
         avgValue()
         //总水量
@@ -99,12 +113,12 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun clearViewData(){
+    private fun clearViewData() {
         setAllWater(0.0)
-        tv_main_avg.text="0"
-        tv_main_loss.text="0"
-        tv_main_sf.text="0"
-        tv_main_cj.text="0"
+        tv_main_avg.text = "0"
+        tv_main_loss.text = "0"
+        tv_main_sf.text = "0"
+        tv_main_cj.text = "0"
     }
 
     //实际
