@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:paddingBottom="10dp"
+        android:background="@drawable/gm_top_15_white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_dialog_input_title"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:background="@drawable/gm_top_15_gray"
+            android:gravity="center"
+            android:text="请输入楼户数"
+            android:textColor="#009966"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_dialog_input_number"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_margin="16dp"
+            android:background="@drawable/gm_8_gray"
+            android:gravity="top|left"
+            android:hint="请输入楼户数"
+            android:inputType="number"
+            android:lines="4"
+            android:padding="8dp"
+            android:textSize="15sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_dialog_input_title" />
+
+        <Button
+            android:id="@+id/btn_dialog_sure"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/gm_30_green"
+            android:text="确认"
+            android:textColor="@color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_dialog_input_number" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
