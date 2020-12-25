@@ -58,8 +58,14 @@
                 android:textColor="@color/black"
                 android:textSize="15sp" />
         </LinearLayout>
+    <View android:layout_width="match_parent"
+        android:background="#45b97c"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_height="1dp"/>
 
         <LinearLayout
+            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -110,6 +116,43 @@
                 android:text="0"
                 android:textColor="#B22222"
                 android:textSize="15sp" />
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+            android:background="#45b97c"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_height="1dp"/>
+        <LinearLayout
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_main_beface_zong"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/tv_main_new_zong"
+                android:layout_marginLeft="8dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="#00CD66"
+                android:textSize="15sp" />
+
+
         </LinearLayout>
     </LinearLayout>
 

@@ -4,30 +4,68 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="10dp">
-
-    <EditText
-        android:gravity="left"
-        android:id="@+id/et_show_changer_input"
-        android:padding="8dp"
-        android:textColor="@color/black"
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content">
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_weight="1"
+             android:text="阳台"
+             android:gravity="center"
+             android:layout_height="wrap_content"/>
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_weight="1"
+             android:gravity="center"
+             android:text="卫生间"
+             android:layout_height="wrap_content"/>
+     </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_margin="10dp"
-        android:inputType="number"
-        android:background="@drawable/gm_8_gray"
-        android:hint="请输入修改内容" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_show_changer_input_y"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/gm_8_gray"
+            android:gravity="left"
+            android:hint="请输入阳台水表数"
+            android:textSize="15sp"
+            android:inputType="number"
+            android:padding="8dp"
+            android:textColor="@color/black" />
+
+        <EditText
+            android:id="@+id/et_show_changer_input_c"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:textSize="15sp"
+            android:background="@drawable/gm_8_gray"
+            android:gravity="left"
+            android:hint="请输入卫生间水表数"
+            android:inputType="number"
+            android:padding="8dp"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tv_show_changer_infom_sure"
-        android:gravity="center"
-        android:textColor="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@drawable/gm_30_green"
+        android:gravity="center"
         android:paddingLeft="10dp"
         android:paddingTop="8dp"
         android:paddingRight="10dp"
         android:paddingBottom="8dp"
-        android:text="确认" />
+        android:text="确认"
+        android:textColor="@color/white" />
 </LinearLayout>

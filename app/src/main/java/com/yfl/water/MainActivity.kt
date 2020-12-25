@@ -149,7 +149,7 @@ class MainActivity : AppCompatActivity() {
         }
         val list = mutableListOf<MainVo>()
         for (index in 1..number) {
-            list.add(MainVo(0, 0, 0.0, 0.0))
+            list.add(MainVo(0, 0, 0, 0, 0, 0, 0.0, 0.0))
         }
         clearData()
         addData(list)
@@ -158,12 +158,13 @@ class MainActivity : AppCompatActivity() {
         rlv_main_content.layoutManager = gm
         rlv_main_content.adapter = mAdapter!!
         mAdapter?.setRecyclerListener(object : MainAdapter.RecyclerItemListener {
-            override fun itemlossClickListener(position: Int, number: Int) {
-                showChangerDialog(false, number, position)
+            override fun itemlossClickListener(position: Int) {
+
+                showChangerDialog(false, position)
             }
 
-            override fun itemNewClickListener(position: Int, number: Int) {
-                showChangerDialog(true, number, position)
+            override fun itemNewClickListener(position: Int) {
+                showChangerDialog(true, position)
             }
 
         })
@@ -173,24 +174,41 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun showChangerDialog(isNew: Boolean, number: Int, postion: Int) {
-        DialogUtils.showChangerOrderInfom(this, true, "$number", isNew)
-        { data: String, isNew: Boolean ->
-            val numberInt = data.toInt()
+    private fun showChangerDialog(isNew: Boolean, postion: Int) {
+        val mainVo = mArray!![postion]
+        var y = "0"
+        var c = "0"
+        if (isNew) {
+            y = "${mainVo.newY}"
+            c = "${mainVo.newc}"
+        } else {
+            y = "${mainVo.lastY}"
+            c = "${mainVo.lastc}"
+        }
+        DialogUtils.showChangerOrderInfom(this, true,y,c, isNew)
+        { y: String, c: String, isNew: Boolean ->
+            val y = y.toInt()
+            val c = c.toInt()
+            val numberInt = JavaArithUtil.add(y.toDouble(), c.toDouble(), 2)
             if (isNew) {
                 val last = mArray!![postion].last
                 if (last != 0 && numberInt < last) {
                     Toast.makeText(this, "输入有误", Toast.LENGTH_SHORT).show();
                     return@showChangerOrderInfom
                 }
-                mArray!![postion].new = numberInt
+
+                mArray!![postion].new = numberInt.toInt()
+                mArray!![postion].newc = c.toInt()
+                mArray!![postion].newY = y.toInt()
             } else {
                 val new = mArray!![postion].new
                 if (new != 0 && numberInt > new) {
                     Toast.makeText(this, "输入有误", Toast.LENGTH_SHORT).show();
                     return@showChangerOrderInfom
                 }
-                mArray!![postion].last = numberInt
+                mArray!![postion].last = numberInt.toInt()
+                mArray!![postion].lastc = c.toInt()
+                mArray!![postion].lastY = y.toInt()
             }
 
             mAdapter?.notifyItemChanged(postion)

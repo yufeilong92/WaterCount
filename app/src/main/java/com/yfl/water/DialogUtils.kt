@@ -69,28 +69,32 @@ object DialogUtils {
     fun showChangerOrderInfom(
         mContext: Context,
         canable: Boolean,
-        com: String,isNew:Boolean,
-        sure: (data: String,isNew:Boolean) -> Unit
+        y: String,c:String, isNew: Boolean,
+        sure: (y: String, w: String, isNew: Boolean) -> Unit
     ) {
         val dialogBuilde = AlertDialog.Builder(mContext)
         val view = LayoutInflater.from(mContext).inflate(R.layout.dialog_showchanger_infom, null)
 
-        val et = view.findViewById<EditText>(R.id.et_show_changer_input)
+        val etc = view.findViewById<EditText>(R.id.et_show_changer_input_c)
+        val etY = view.findViewById<EditText>(R.id.et_show_changer_input_y)
         val tvSure = view.findViewById<TextView>(R.id.tv_show_changer_infom_sure)
 
-        et.setText(com)
+        etc.setText(c)
+        etY.setText(y)
         dialogBuilde.setView(view)
         dialogBuilde.setCancelable(canable)
         dialogBuilde.create()
         val dialog = dialogBuilde.show()
         tvSure.setOnClickListener {
-            val com = et.text.toString()
-            if (TextUtils.isEmpty(com) || com == "0") {
-                Toast.makeText(mContext, "请输入数量", Toast.LENGTH_SHORT).show();
-                return@setOnClickListener
+            var w = etc.text.toString()
+            if (TextUtils.isEmpty(w)) {
+                w = "0"
             }
+            var y = etY.text.toString()
+            if (TextUtils.isEmpty(y))
+                y = "0"
             dialog.dismiss()
-            sure(com,isNew)
+            sure(y, w, isNew)
         }
     }
 }

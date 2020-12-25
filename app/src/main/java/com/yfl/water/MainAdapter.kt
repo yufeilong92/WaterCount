@@ -23,8 +23,8 @@ class MainAdapter(var mContext: Context, var data: MutableList<MainVo>) :
     }
 
     interface RecyclerItemListener {
-        fun itemlossClickListener(position: Int,com:Int)
-        fun itemNewClickListener(position: Int,com:Int)
+        fun itemlossClickListener(position: Int)
+        fun itemNewClickListener(position: Int)
     }
 
     private var listener: RecyclerItemListener? = null;
@@ -38,6 +38,8 @@ class MainAdapter(var mContext: Context, var data: MutableList<MainVo>) :
         val new = view.findViewById<TextView>(R.id.tv_main_new)
         val number = view.findViewById<TextView>(R.id.tv_main_number)
         val money = view.findViewById<TextView>(R.id.tv_main_money)
+        val lastBeface=view.findViewById<TextView>(R.id.tv_main_beface_zong)
+        val newNow=view.findViewById<TextView>(R.id.tv_main_new_zong)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainAdapter.ViewHolde {
@@ -50,11 +52,14 @@ class MainAdapter(var mContext: Context, var data: MutableList<MainVo>) :
         holder.new.text = "${mainVo.new}"
         holder.last.text = "${mainVo.last}"
         holder.money.text = "${mainVo.difference}吨--${mainVo.value}元"
+        holder.lastBeface.text="${mainVo.lastY}(阳)+${mainVo.lastc}(卫)"
+        holder.newNow.text="${mainVo.newY}(阳)+${mainVo.newc}(卫)"
+
         holder.new.setOnClickListener {
-            listener?.itemNewClickListener(position,mainVo.new)
+            listener?.itemNewClickListener(position)
         }
         holder.last.setOnClickListener {
-            listener?.itemlossClickListener(position,mainVo.new)
+            listener?.itemlossClickListener(position)
         }
 
     }
