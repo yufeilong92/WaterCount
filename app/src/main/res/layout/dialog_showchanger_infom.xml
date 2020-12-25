@@ -33,7 +33,7 @@
             android:layout_weight="1"
             android:background="@drawable/gm_8_gray"
             android:gravity="left"
-            android:hint="请输入阳台水表数"
+            android:hint="请输入水表数"
             android:textSize="15sp"
             android:inputType="number"
             android:padding="8dp"
@@ -48,7 +48,7 @@
             android:textSize="15sp"
             android:background="@drawable/gm_8_gray"
             android:gravity="left"
-            android:hint="请输入卫生间水表数"
+            android:hint="请输入水表数"
             android:inputType="number"
             android:padding="8dp"
             android:textColor="@color/black" />
