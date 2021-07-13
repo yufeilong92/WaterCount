@@ -33,6 +33,10 @@ object DialogUtils {
                         Toast.makeText(mContext, "输入数量为空", Toast.LENGTH_SHORT).show();
                         return@setOnClickListener
                     }
+                    if (number.toInt()>300){
+                        Toast.makeText(mContext, "数量超出计算范围", Toast.LENGTH_SHORT).show();
+                        return@setOnClickListener
+                    }
                     onSure(number.toInt())
                     dismiss()
                 }

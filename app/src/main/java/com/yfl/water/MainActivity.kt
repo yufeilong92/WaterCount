@@ -136,6 +136,7 @@ class MainActivity : AppCompatActivity() {
         }
         val instance = SaveNumberUtils.getInstance()
         DialogUtils.showInputNumberUserDialog(this) {
+
             instance?.putTokenTag("$it")
             initData(it)
             clearViewData()
