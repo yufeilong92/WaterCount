@@ -7,7 +7,7 @@
     android:background="#DCDCDC"
     tools:context=".MainActivity">
 
-    <ScrollView
+    <com.yfl.water.CustomScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
@@ -99,7 +99,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:descendantFocusability="beforeDescendants">
-                <androidx.recyclerview.widget.RecyclerView
+                <com.yfl.water.CustomRecyclerView
                     android:id="@+id/rlv_main_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -236,5 +236,5 @@
                 android:layout_height="30dp" />
         </LinearLayout>
 
-    </ScrollView>
+    </com.yfl.water.CustomScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
