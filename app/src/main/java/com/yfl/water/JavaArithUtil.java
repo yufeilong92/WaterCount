@@ -39,7 +39,7 @@ public class JavaArithUtil {
     public static double add(double value1, double value2, int postion) {
         BigDecimal b1 =BigDecimal.valueOf(value1);
         BigDecimal b2 = BigDecimal.valueOf(value2);
-        return b1.add(b2).setScale(postion, BigDecimal.ROUND_DOWN).doubleValue();
+        return b1.add(b2).setScale(postion, BigDecimal.ROUND_UP).doubleValue();
     }
 
     public static double strToDouble(String com) {
@@ -47,7 +47,7 @@ public class JavaArithUtil {
             return 0.0;
         }
         BigDecimal bd = new BigDecimal(com);
-        Double d = bd.setScale(2, BigDecimal.ROUND_DOWN).doubleValue();
+        Double d = bd.setScale(2, BigDecimal.ROUND_UP).doubleValue();
         return d;
     }
 
@@ -75,7 +75,7 @@ public class JavaArithUtil {
     public static double sub(double value1, double value2, int postion) {
         BigDecimal b1 =BigDecimal.valueOf(value1);
         BigDecimal b2 = BigDecimal.valueOf(value2);
-        return b1.subtract(b2).setScale(postion, BigDecimal.ROUND_DOWN).doubleValue();
+        return b1.subtract(b2).setScale(postion, BigDecimal.ROUND_UP).doubleValue();
     }
 
 
@@ -102,7 +102,7 @@ public class JavaArithUtil {
     public static double mul(double value1, double value2,Integer positon) {
         BigDecimal b1 = BigDecimal.valueOf(value1);
         BigDecimal b2 =  BigDecimal.valueOf(value2);
-        return b1.multiply(b2).setScale(positon, BigDecimal.ROUND_DOWN).doubleValue();
+        return b1.multiply(b2).setScale(positon, BigDecimal.ROUND_UP).doubleValue();
     }
 
 
@@ -116,23 +116,23 @@ public class JavaArithUtil {
     public static double mul_up(double value1, double value2,Integer positon) {
         BigDecimal b1 = BigDecimal.valueOf(value1);
         BigDecimal b2 =  BigDecimal.valueOf(value2);
-        return b1.multiply(b2).setScale(positon, BigDecimal.ROUND_DOWN).doubleValue();
+        return b1.multiply(b2).setScale(positon, BigDecimal.ROUND_UP).doubleValue();
     }
 
     public static double fourFive(double value1, Integer number) {
         BigDecimal b1 = BigDecimal.valueOf(value1);
-        return b1.setScale(number, BigDecimal.ROUND_DOWN).doubleValue();
+        return b1.setScale(number, BigDecimal.ROUND_UP).doubleValue();
 
     }
 
     public static float toFloat(double value1, Integer number) {
         BigDecimal decimal =  BigDecimal.valueOf(value1);
-        return decimal.setScale(number, BigDecimal.ROUND_DOWN).floatValue();
+        return decimal.setScale(number, BigDecimal.ROUND_UP).floatValue();
 
     }
     public static Double toDouble(double value1, Integer number) {
         BigDecimal decimal =  BigDecimal.valueOf(value1);
-        return decimal.setScale(number, BigDecimal.ROUND_DOWN).doubleValue();
+        return decimal.setScale(number, BigDecimal.ROUND_UP).doubleValue();
 
     }
     public static Double toRoundUpDouble(double value1, Integer number) {
@@ -159,7 +159,7 @@ public class JavaArithUtil {
         BigDecimal b1 =BigDecimal.valueOf(value1);
         BigDecimal b2 = BigDecimal.valueOf(value2);
         //默认保留两位会有错误，这里设置保留小数点后4位
-        return b1.divide(b2, scale, BigDecimal.ROUND_DOWN).doubleValue();
+        return b1.divide(b2, scale, BigDecimal.ROUND_UP).doubleValue();
     }
     /**
      * 提供精确的除法运算方法div
@@ -174,7 +174,7 @@ public class JavaArithUtil {
         //如果精确范围小于0，抛出异常信息
         BigDecimal b1 =BigDecimal.valueOf(value1);
         BigDecimal b2 = BigDecimal.valueOf(value2);
-        return b1.divide(b2,  BigDecimal.ROUND_DOWN).doubleValue();
+        return b1.divide(b2,  BigDecimal.ROUND_UP).doubleValue();
     }
     /**
      * 提供精确的除法运算方法div
@@ -194,7 +194,7 @@ public class JavaArithUtil {
         BigDecimal b1 =BigDecimal.valueOf(value1);
         BigDecimal b2 = BigDecimal.valueOf(value2);
         //默认保留两位会有错误，这里设置保留小数点后4位
-        return  b1.divide(b2, scale, BigDecimal.ROUND_DOWN).floatValue();
+        return  b1.divide(b2, scale, BigDecimal.ROUND_UP).floatValue();
     }
 
     public static String divNumber(double value1, double value2, int scale) {
